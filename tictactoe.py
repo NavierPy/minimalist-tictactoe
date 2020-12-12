@@ -7,13 +7,13 @@ Created on Fri Dec 11 21:36:29 2020
 
 # The initial state of the board is defined (empty):
 
-state = ["-","-","-","-","-","-","-","-","-"]
+state = ["·","·","·","·","·","·","·","·","·"]
 
 # A function is defined to draw the state:
 
 def draw(x):
 
-    print("\n{0}{1}{2}\n{3}{4}{5}\n{6}{7}{8}".format(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8]))
+    print("\n{0} {1} {2}\n{3} {4} {5}\n{6} {7} {8}".format(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8]))
 
 
 # The initial state is drawn:
@@ -33,16 +33,16 @@ while flag:
     # Depending on the player playing this turn, one symbol or another will be drawn:
     
     if player==1:
-        symbol="x"
+        symbol="X"
     else:
-        symbol="o"
+        symbol="O"
     
     # The player is asked where he wants to move and his answer is checked to 
     # be an interger:
     
     while True:
         try:
-            square = int(input("Choose a square to move: "))
+            square = int(input("\nChoose a square to move: "))
             break
         except ValueError:
             print("                      \n                             Invalid character")
@@ -56,7 +56,7 @@ while flag:
     
     if square<1 or square>9:
             print("                      \n                             Invalid character")            
-    elif state[int(square)-1]=="-":
+    elif state[int(square)-1]=="·":
         state[int(square)-1]=symbol
         player*=-1
     else:
@@ -71,20 +71,20 @@ while flag:
     j=0
     
     while j<7:                   
-        if state[j]==state[j+1]==state[j+2]!="-":
+        if state[j]==state[j+1]==state[j+2]!="·":
             print("                             {0} wins".format(state[j]))
             flag = False
         j+=3
     j=0
     while j<3:        
-        if state[j]==state[j+3]==state[j+6]!="-":
+        if state[j]==state[j+3]==state[j+6]!="·":
             print("                             {0} wins".format(state[j]))
             flag = False
         j+=1
-    if state[0]==state[4]==state[8]!="-":
+    if state[0]==state[4]==state[8]!="·":
         print("                             {0} wins".format(state[0]))
         flag = False
-    if state[2]==state[4]==state[6]!="-":
+    if state[2]==state[4]==state[6]!="·":
         print("                             {0} wins".format(state[2]))
         flag = False
                 
@@ -93,11 +93,11 @@ while flag:
     if flag:
         occupied_squares = 0
         for square in state:        
-            if square!="-":
+            if square!="·":
                 occupied_squares+=1
         if occupied_squares==9:
             flag=False
             print("                             Draw")
             
             
-            
+             
