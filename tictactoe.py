@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Dec 11 21:36:29 2020
-
-@author: Tsiolkovsky
-"""
-
 # The initial state of the board is defined (empty):
 
 state = ["·","·","·","·","·","·","·","·","·"]
