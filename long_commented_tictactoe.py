@@ -91,6 +91,3 @@ while flag:
         if occupied_squares==9:
             flag=False
             print("                             Draw")
-            
-            
-             
